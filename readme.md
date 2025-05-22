@@ -21,7 +21,7 @@ Para acessar o banco e verificar os dados cadastrados, use o MySQL Workbench ou 
 ### Passos
 
 # Clone o repositório
-git clone https://github.com/seuusuario/projeto-devops.git
+git clone https://github.com/OrDeP90/cadastro-doacao-docker.git
 cd projeto-devops
 
 # Suba os contêineres
