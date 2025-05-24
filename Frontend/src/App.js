@@ -13,7 +13,7 @@ function App() {
 // Atualize as funções handleSubmit e fetchDonors para:
 const handleSubmit = async (e) => {
   e.preventDefault();
-  setMessage(''); // Limpa mensagens anteriores
+  setMessage(''); // Limpa mensagens
 
   try {
     const response = await fetch('/api/doadores', {
@@ -28,7 +28,7 @@ const handleSubmit = async (e) => {
       }),
     });
 
-    const data = await response.json(); // Adicionado para ler a resposta JSON
+    const data = await response.json(); 
     
     if (!response.ok) {
       throw new Error(data.message || 'Erro ao cadastrar doação');
@@ -42,7 +42,7 @@ const handleSubmit = async (e) => {
     setEmail('');
     setConsent(false);
     
-    // Atualiza a lista de doadores após cadastro
+    // Atualiza a lista de doadores depois do cadastro
     await fetchDonors();
     
   } catch (err) {

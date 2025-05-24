@@ -5,9 +5,9 @@ const db = require('./db');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // Adicione esta linha
+app.use(express.urlencoded({ extended: true })); 
 
-// Rota GET com tratamento melhorado
+
 app.get('/doadores', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM doadores WHERE consentimento = true');
@@ -18,11 +18,11 @@ app.get('/doadores', async (req, res) => {
   }
 });
 
-// Rota POST com validação
+
 app.post('/doadores', async (req, res) => {
   const { nome, tipo_sanguineo, data_nascimento, email, consentimento } = req.body;
   
-  // Validação básica
+  
   if (!nome || !tipo_sanguineo || !data_nascimento || !email) {
     return res.status(400).json({ error: 'Dados incompletos' });
   }
